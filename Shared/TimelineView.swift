@@ -54,7 +54,7 @@ struct TimelineView: View {
                 }
             if showingPopUp{
                 Color.gray.opacity(0.8)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    //.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 DetailView(isPresent: $showingPopUp)
                     .position(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/3)
             }
