@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C3EAAAD27688A19007D39C4 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EAAAC27688A19007D39C4 /* EditorView.swift */; };
+		6C3EAAAE27688A19007D39C4 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EAAAC27688A19007D39C4 /* EditorView.swift */; };
 		6C6CBC51271EBEF400029A97 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CBC50271EBEF400029A97 /* TimelineView.swift */; };
 		6C6CBC52271EBEF400029A97 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CBC50271EBEF400029A97 /* TimelineView.swift */; };
 		6C6CBC54271EDC4E00029A97 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CBC53271EDC4E00029A97 /* CalenderView.swift */; };
 		6C6CBC55271EDC4E00029A97 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CBC53271EDC4E00029A97 /* CalenderView.swift */; };
+		6CE51D1D2771B2FD005C1260 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51D1C2771B2FD005C1260 /* UserData.swift */; };
+		6CE51D1E2771B2FD005C1260 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51D1C2771B2FD005C1260 /* UserData.swift */; };
 		6CEC7901271EB9220099E125 /* LocationListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC78F1271EB91F0099E125 /* LocationListApp.swift */; };
 		6CEC7902271EB9220099E125 /* LocationListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC78F1271EB91F0099E125 /* LocationListApp.swift */; };
 		6CEC7903271EB9220099E125 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC78F2271EB91F0099E125 /* ContentView.swift */; };
 		6CEC7904271EB9220099E125 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC78F2271EB91F0099E125 /* ContentView.swift */; };
 		6CEC7905271EB9220099E125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC78F3271EB9220099E125 /* Assets.xcassets */; };
 		6CEC7906271EB9220099E125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC78F3271EB9220099E125 /* Assets.xcassets */; };
+		6CF04DCE2771BCDE00B7C355 /* DetailHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF04DCD2771BCDE00B7C355 /* DetailHostView.swift */; };
+		6CF04DCF2771BCDE00B7C355 /* DetailHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF04DCD2771BCDE00B7C355 /* DetailHostView.swift */; };
 		6CFEC5FC271EF960006CA8DB /* HamburgermenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFEC5FB271EF960006CA8DB /* HamburgermenuView.swift */; };
 		6CFEC5FD271EF960006CA8DB /* HamburgermenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFEC5FB271EF960006CA8DB /* HamburgermenuView.swift */; };
 		6CFEC602271F15DF006CA8DB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFEC601271F15DF006CA8DB /* DetailView.swift */; };
@@ -24,14 +30,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C3EAAAC27688A19007D39C4 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		6C6CBC50271EBEF400029A97 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		6C6CBC53271EDC4E00029A97 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		6CE51D1C2771B2FD005C1260 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		6CEC78F1271EB91F0099E125 /* LocationListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListApp.swift; sourceTree = "<group>"; };
 		6CEC78F2271EB91F0099E125 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6CEC78F3271EB9220099E125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CEC78F8271EB9220099E125 /* LocationList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEC78FE271EB9220099E125 /* LocationList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEC7900271EB9220099E125 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		6CF04DCD2771BCDE00B7C355 /* DetailHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHostView.swift; sourceTree = "<group>"; };
 		6CFEC5FB271EF960006CA8DB /* HamburgermenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgermenuView.swift; sourceTree = "<group>"; };
 		6CFEC601271F15DF006CA8DB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,13 +75,16 @@
 		6CEC78F0271EB91F0099E125 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				6CEC78F2271EB91F0099E125 /* ContentView.swift */,
 				6CEC78F1271EB91F0099E125 /* LocationListApp.swift */,
-				6CFEC5FB271EF960006CA8DB /* HamburgermenuView.swift */,
+				6CE51D1C2771B2FD005C1260 /* UserData.swift */,
+				6CEC78F2271EB91F0099E125 /* ContentView.swift */,
 				6C6CBC50271EBEF400029A97 /* TimelineView.swift */,
 				6CFEC601271F15DF006CA8DB /* DetailView.swift */,
+				6C3EAAAC27688A19007D39C4 /* EditorView.swift */,
+				6CFEC5FB271EF960006CA8DB /* HamburgermenuView.swift */,
 				6C6CBC53271EDC4E00029A97 /* CalenderView.swift */,
 				6CEC78F3271EB9220099E125 /* Assets.xcassets */,
+				6CF04DCD2771BCDE00B7C355 /* DetailHostView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -192,9 +204,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF04DCE2771BCDE00B7C355 /* DetailHostView.swift in Sources */,
 				6CEC7903271EB9220099E125 /* ContentView.swift in Sources */,
 				6CFEC602271F15DF006CA8DB /* DetailView.swift in Sources */,
+				6CE51D1D2771B2FD005C1260 /* UserData.swift in Sources */,
 				6C6CBC51271EBEF400029A97 /* TimelineView.swift in Sources */,
+				6C3EAAAD27688A19007D39C4 /* EditorView.swift in Sources */,
 				6C6CBC54271EDC4E00029A97 /* CalenderView.swift in Sources */,
 				6CFEC5FC271EF960006CA8DB /* HamburgermenuView.swift in Sources */,
 				6CEC7901271EB9220099E125 /* LocationListApp.swift in Sources */,
@@ -205,9 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF04DCF2771BCDE00B7C355 /* DetailHostView.swift in Sources */,
 				6CEC7904271EB9220099E125 /* ContentView.swift in Sources */,
 				6CFEC603271F15DF006CA8DB /* DetailView.swift in Sources */,
+				6CE51D1E2771B2FD005C1260 /* UserData.swift in Sources */,
 				6C6CBC52271EBEF400029A97 /* TimelineView.swift in Sources */,
+				6C3EAAAE27688A19007D39C4 /* EditorView.swift in Sources */,
 				6C6CBC55271EDC4E00029A97 /* CalenderView.swift in Sources */,
 				6CFEC5FD271EF960006CA8DB /* HamburgermenuView.swift in Sources */,
 				6CEC7902271EB9220099E125 /* LocationListApp.swift in Sources */,

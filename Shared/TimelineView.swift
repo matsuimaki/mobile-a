@@ -10,27 +10,25 @@ import SwiftUI
 
 struct TimelineView: View {
     
-    @State var showingPopUp = false
-    @Binding var timelines: [Timeline]
+    @State var isPresent = false
+    @EnvironmentObject var userData: UserData
     
     var body: some View {
-        ZStack{
             VStack(spacing:15){
-                    ForEach(self.timelines, id: \.id){ (timeline) in
+                ForEach(userData.timelines, id: \.id){ (timeline) in
                         Button(
                             action:{
-                                withAnimation{
-                                    showingPopUp = true
-                                }
+                                self.isPresent.toggle()
                             }
                             ,label:{
                                 HStack(){
                                     ZStack{
                                         Circle()
                                             .frame(width:30, height:30, alignment: .center)
-                                            .foregroundColor(.blue)
+                                            .foregroundColor(Color("Color1"))
                                         Text(timeline.day)
-                                            .fontWeight(.bold)
+                                            //.fontWeight(.bold)
+                                            .foregroundColor(Color.white)
                                     }
                                     .padding(.leading,10)
                                     Text(timeline.location)
@@ -39,25 +37,21 @@ struct TimelineView: View {
                                     Divider()
                                         .padding(10)
                                     Group{
-                                        Text(timeline.time_h) + Text(timeline.time_m)
+                                        Text(timeline.time_h) + Text("h") + Text(timeline.time_m) + Text("m")
                                     }
                                     .padding(.trailing)
                                 }
-                                .frame(width: UIScreen.main.bounds.width-50, height:50, alignment: .leading)
-                                .background(Color.yellow)
+                                .frame(width: UIScreen.main.bounds.width-100, height:50, alignment: .leading)
+                                .background(Color("Color2"))
                                 .cornerRadius(10)
                                 .id(timeline.id)
                             }
                         )
                         .buttonStyle(PlainButtonStyle())
+                        .sheet(isPresented: $isPresent){
+                            DetailHostView()
+                        }
                     }
-                }
-            if showingPopUp{
-                Color.gray.opacity(0.8)
-                    //.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                DetailView(isPresent: $showingPopUp)
-                    .position(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/3)
             }
-        }
     }
 }

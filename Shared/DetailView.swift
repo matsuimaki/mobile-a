@@ -10,58 +10,28 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @Binding var isPresent: Bool
+    @EnvironmentObject var userData: UserData
+    @State var theID = 1
     
     var body: some View {
-        VStack(alignment: .trailing){
-            Button(action: {
-                withAnimation{
-                    isPresent = false
-                }
-            }, label: {
-                Image("Close2")
-                    .renderingMode(.original)
-                    .resizable()
-                    .frame(width: 30, height: 30)
-            })
-            .padding(.horizontal, 5)
-            VStack{
-                VStack(alignment: .leading){
-                    ZStack{
-                        Circle()
-                            .frame(width:50, height:50, alignment: .center)
-                            .foregroundColor(.blue)
-                        Text("Date")
-                            .fontWeight(.bold)
-                    }
-                    Text("Location")
-                    Text("Staying Time")
-                }
-                .frame(width: UIScreen.main.bounds.width-40, alignment: .leading)
-                Divider()
-                HStack(alignment: .center,spacing: 15){
-                    Button(action: {
-                    
-                    }){
-                        Text("編集")
-                    }
-                    Button(action: {
-                        
-                    }){
-                        Text("削除")
-                    }
-                    Button(action: {
-                    
-                    }){
-                        Text("アーカイブ")
-                    }
-                }
+        
+        let month: String = userData.timelines[self.theID].month
+        let day: String = userData.timelines[self.theID].day
+        let location: String = userData.timelines[self.theID].location
+        let time_h: String = userData.timelines[self.theID].time_h
+        let time_m: String = userData.timelines[self.theID].time_m
+        
+
+        List{
+            Section(header: Text("日付")){
+                Text(month) + Text("月") + Text(day) + Text("日")
             }
-            .padding(.top, 20)
-            .padding(.bottom, 10)
-            .frame(width: UIScreen.main.bounds.width-20)
-            .background(Color.yellow)
-            .cornerRadius(10)
+            Section(header: Text("場所")){
+                Text(location)
+            }
+            Section(header: Text("滞在時間")){
+                Text(time_h) + Text("時間") + Text(time_m) + Text("分")
+            }
         }
     }
 }
