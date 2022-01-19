@@ -14,44 +14,38 @@ struct TimelineView: View {
     @EnvironmentObject var userData: UserData
     
     var body: some View {
-            VStack(spacing:15){
+            VStack(spacing:30){
                 ForEach(userData.timelines, id: \.id){ (timeline) in
-                        Button(
-                            action:{
-                                self.isPresent.toggle()
+                        HStack{
+                            VStack(alignment: .leading, spacing:10){
+                                Text(timeline.month).bold()+Text("月").bold()+Text(timeline.day).bold()+Text("日").bold()
+                                Text(timeline.location)
                             }
-                            ,label:{
-                                HStack(){
-                                    ZStack{
-                                        Circle()
-                                            .frame(width:30, height:30, alignment: .center)
-                                            .foregroundColor(Color("Color1"))
-                                        Text(timeline.day)
-                                            //.fontWeight(.bold)
-                                            .foregroundColor(Color.white)
-                                    }
-                                    .padding(.leading,10)
-                                    Text(timeline.location)
-                                        .padding()
-                                    Spacer()
-                                    Divider()
-                                        .padding(10)
-                                    Group{
-                                        Text(timeline.time_h) + Text("h") + Text(timeline.time_m) + Text("m")
-                                    }
-                                    .padding(.trailing)
-                                }
-                                .frame(width: UIScreen.main.bounds.width-100, height:50, alignment: .leading)
-                                .background(Color("Color2"))
-                                .cornerRadius(10)
-                                .id(timeline.id)
+                            Spacer()
+                            ZStack{
+                                Capsule()
+                                    .fill(Color.white)
+                                    .frame(width:80, height:40)
+                                    .shadow(color: Color("light"), radius: 5, x: -5, y: -5)
+                                    .shadow(color: Color("dark"), radius: 5, x: 5, y: 5)
+                                Text(timeline.time_h)+Text(" : ")+Text(timeline.time_m)
                             }
-                        )
-                        .buttonStyle(PlainButtonStyle())
-                        .sheet(isPresented: $isPresent){
-                            DetailHostView()
                         }
-                    }
+                        .foregroundColor(Color("string"))
+                        .frame(width: UIScreen.main.bounds.width-80, height:50, alignment: .leading)
+                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .onTapGesture{self.isPresent.toggle()}
+                        .padding()
+                        .background(Color("base"))
+                        .cornerRadius(10)
+                        .compositingGroup()
+                        .shadow(color: Color("light"), radius: 10, x: -10, y: -10)
+                        .shadow(color: Color("dark"), radius: 10, x: 10, y: 10)
+                        .id(timeline.id)
+                }
+                .sheet(isPresented: $isPresent){
+                    DetailHostView()
+                }
             }
     }
 }

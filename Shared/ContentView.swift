@@ -9,63 +9,53 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var currentOffset = CGFloat.zero
-    @State var openOffset = CGFloat.zero
-    @State var closeOffset = CGFloat.zero
+    @State var showingmenu = false
     
     @EnvironmentObject var userData: UserData
+    
+    init(){
+        let appearance = UINavigationBarAppearance()
+        appearance.shadowColor = .clear
+        UINavigationBar.appearance().barTintColor = UIColor(red:230/255,green:240/255,blue:250/255,alpha: 1)
+        
+    }
     
     var body: some View {
         ZStack(alignment: .leading){
             //メインコンテンツ
             NavigationView{
                 ZStack{
-                    HStack {
-                        Spacer()
-                    }
-                    
+                    Color("base").ignoresSafeArea()
                     ScrollView(.vertical){
-                        VStack{
-                            TimelineView()
-                        }
+                        TimelineView()
+                            .frame(width:UIScreen.main.bounds.width)
+                            .padding(.top, 30)
                     }
-                    //メニューを押されたら背景をグレーアウトする
-                    Color.gray.opacity(
-                        Double((self.closeOffset  - self.currentOffset)/self.closeOffset) - 0.4
-                    )
+                    if showingmenu{
+                        Color("dark").opacity(0.9)
+                            .edgesIgnoringSafeArea(.bottom)
+                        HamburgermenuView(isShowing: $showingmenu)
+                    }
                 }
                 //タイトル
                 .navigationBarTitle("Location History", displayMode: .inline)
                 //ハンバーガーメニューボタンの配置
-                .navigationBarItems(
-                    leading: Button(
-                        action: {
-                            self.currentOffset = self.openOffset
-                        })
-                    {
-                        Image("Hamburger2")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    }
-                )
+               .navigationBarItems(
+                   leading: Button(
+                       action: {
+                           withAnimation{showingmenu=true}
+                       }
+                   ){
+                       Image("menu")
+                           .renderingMode(.original)
+                           .resizable()
+                           .frame(width: 40, height: 40)
+                           .shadow(color: Color("light"), radius: 5, x: -5, y: -5)
+                           .shadow(color: Color("dark"), radius: 5, x: 5, y: 5)
+                   }.padding(.bottom, 10)
+               )
             }
-            //スライドメニューの出現設定
-            HamburgermenuView()
-                .background(Color.white)
-                .frame(width: UIScreen.main.bounds.width*0.7)
-                .edgesIgnoringSafeArea(.bottom)
-                .onAppear(perform: {
-                    self.currentOffset = UIScreen.main.bounds.width * -1
-                    self.closeOffset = self.currentOffset
-                    self.openOffset = .zero
-                })
-                .offset(x: self.currentOffset)
-                .animation(.default)
-        }.gesture(DragGesture(minimumDistance: 5)
-                    .onEnded{value in
-                        self.currentOffset = self.closeOffset
-        })
+        }
     }
 }
 

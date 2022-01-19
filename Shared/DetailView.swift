@@ -13,6 +13,10 @@ struct DetailView: View {
     @EnvironmentObject var userData: UserData
     @State var theID = 1
     
+    init(){
+        UITableView.appearance().backgroundColor = UIColor(red:230/255,green:240/255,blue:250/255,alpha: 1)
+    }
+    
     var body: some View {
         
         let month: String = userData.timelines[self.theID].month
@@ -21,7 +25,6 @@ struct DetailView: View {
         let time_h: String = userData.timelines[self.theID].time_h
         let time_m: String = userData.timelines[self.theID].time_m
         
-
         List{
             Section(header: Text("日付")){
                 Text(month) + Text("月") + Text(day) + Text("日")

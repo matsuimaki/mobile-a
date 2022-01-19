@@ -12,6 +12,10 @@ struct EditorView: View {
     @EnvironmentObject var userData: UserData
     @State var theID = 1
     
+    init(){
+        UITableView.appearance().backgroundColor = UIColor(red:230/255,green:240/255,blue:250/255,alpha: 1)
+    }
+    
     var body: some View {
         List{
             Section(header: Text("場所")){

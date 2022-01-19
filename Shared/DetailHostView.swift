@@ -15,15 +15,14 @@ struct DetailHostView: View {
         VStack{
             HStack(alignment: .center){
             if mode?.wrappedValue == .active {
-              Button("Cancel"){
-                mode?.animation().wrappedValue = .inactive
-              }
+                Button("Cancel"){
+                    mode?.animation().wrappedValue = .inactive
+                }
             }
             Spacer()
             EditButton()
             }
-            .background(Color(.systemGray3))
-            .padding(30)
+            .padding(20)
           if mode?.wrappedValue == .inactive {
             DetailView()
           }else{
@@ -32,5 +31,8 @@ struct DetailHostView: View {
               //.onDisappear {}
           }
         }
+        .foregroundColor(Color("string"))
+        .background(Color("base"))
+        
     }
 }

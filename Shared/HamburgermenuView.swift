@@ -10,26 +10,31 @@ import SwiftUI
 
 struct HamburgermenuView: View {
     
+    @Binding var isShowing: Bool
     @State private var OnOff = false
     
     var body: some View {
-        VStack(alignment: .leading){
-            Text("設定")
-                .font(.largeTitle)
-                .padding(.top, 30)
-            Divider()
-            ScrollView(.vertical, showsIndicators: true){
+        VStack{
+            VStack(alignment: .leading){
+                Text("設定")
+                    .font(.title)
+                Divider()
                 Toggle("位置情報記録", isOn: $OnOff)
-                Text(String(OnOff))
+                    .toggleStyle(SwitchToggleStyle(tint:Color("accent")))
+                    .padding(.bottom,20)
             }
-            .padding(.top,10)
+            Button(action:{
+                withAnimation{
+                    isShowing = false
+                }
+            },label:{
+                Text("Close")
+            })
         }
-        .padding(.horizontal, 20)
-    }
-}
-
-struct HamburgermenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        HamburgermenuView()
+        .padding()
+        .foregroundColor(Color("string"))
+        .frame(width:280, alignment: .center)
+        .background(Color("light"))
+        .cornerRadius(20)
     }
 }
