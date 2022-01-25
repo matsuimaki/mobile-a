@@ -10,14 +10,12 @@ import SwiftUI
 struct ContentView: View {
     
     @State var showingmenu = false
-    
     @EnvironmentObject var userData: UserData
     
     init(){
         let appearance = UINavigationBarAppearance()
         appearance.shadowColor = .clear
         UINavigationBar.appearance().barTintColor = UIColor(red:230/255,green:240/255,blue:250/255,alpha: 1)
-        
     }
     
     var body: some View {

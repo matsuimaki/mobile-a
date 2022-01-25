@@ -12,6 +12,7 @@ struct LocationListApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(UserData())
         }
     }
 }

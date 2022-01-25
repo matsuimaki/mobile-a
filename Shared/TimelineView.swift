@@ -11,6 +11,7 @@ import SwiftUI
 struct TimelineView: View {
     
     @State var isPresent = false
+    @State var theID = 0
     @EnvironmentObject var userData: UserData
     
     var body: some View {
@@ -34,17 +35,19 @@ struct TimelineView: View {
                         .foregroundColor(Color("string"))
                         .frame(width: UIScreen.main.bounds.width-80, height:50, alignment: .leading)
                         .contentShape(RoundedRectangle(cornerRadius: 10))
-                        .onTapGesture{self.isPresent.toggle()}
+                        .onTapGesture{
+                            self.theID = timeline.id
+                            self.isPresent.toggle()
+                        }
                         .padding()
                         .background(Color("base"))
                         .cornerRadius(10)
                         .compositingGroup()
                         .shadow(color: Color("light"), radius: 10, x: -10, y: -10)
                         .shadow(color: Color("dark"), radius: 10, x: 10, y: 10)
-                        .id(timeline.id)
                 }
                 .sheet(isPresented: $isPresent){
-                    DetailHostView()
+                    DetailHostView(theID: self.$theID)
                 }
             }
     }

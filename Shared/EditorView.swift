@@ -9,20 +9,80 @@ import SwiftUI
 
 struct EditorView: View {
     
-    @EnvironmentObject var userData: UserData
-    @State var theID = 1
+    @Binding var draft_detail: Timeline
     
-    init(){
-        UITableView.appearance().backgroundColor = UIColor(red:230/255,green:240/255,blue:250/255,alpha: 1)
-    }
+    @State var DatePickerVisible = false
+    @State var TimePickerVisible = false
+    @State var tbd_month = "1"
+    @State var tbd_day = "1"
+    @State var Months = Array(1...12)
+    @State var Days: [Int] = Array(1...31)
+
     
     var body: some View {
         List{
+            Section(header: Text("日付")){
+                Text(self.draft_detail.month)+Text("月")+Text(self.draft_detail.day)+Text("日")
+            }
+            .onTapGesture{
+                self.tbd_month = self.draft_detail.month
+                self.tbd_day = self.draft_detail.day
+                self.DatePickerVisible.toggle()
+            }
+            
+            if DatePickerVisible{
+                VStack{
+                    HStack{
+                        Spacer()
+                        Text("完了")
+                            .onTapGesture{
+                                self.draft_detail.month = self.tbd_month
+                                self.draft_detail.day = self.tbd_day
+                                self.DatePickerVisible.toggle()
+                            }
+                    }
+                    HStack{
+                        Picker("日付", selection: $tbd_month){
+                            ForEach(0..<Months.count){item in
+                                Text(String(self.Months[item])).tag(String(item+1))
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .compositingGroup()
+                        .frame(width: 100)
+                        .clipped()
+                        Text("月")
+                        Picker("日付", selection: $tbd_day){
+                            ForEach(0..<Days.count){item in
+                                Text(String(self.Days[item])).tag(String(item+1))
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .compositingGroup()
+                        .frame(width: 100)
+                        .clipped()
+                        Text("日")
+                    }
+                }
+                .padding(.top, 10)
+            }
+            
             Section(header: Text("場所")){
-                TextField("場所",text:$userData.timelines[theID].location)
+                HStack{
+                    TextField(self.draft_detail.location, text:$draft_detail.location)
+                }
             }
             Section(header: Text("滞在時間")){
-                TextField("時間", text:$userData.timelines[theID].time_h)
+                HStack{
+                    TextField(self.draft_detail.time_h, text:$draft_detail.time_h)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                    Text("時間")
+                    TextField(self.draft_detail.time_m, text:$draft_detail.time_m)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                    Text("分")
+                }
             }
         }
     }
