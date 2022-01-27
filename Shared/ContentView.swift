@@ -48,8 +48,8 @@ struct ContentView: View {
                            .renderingMode(.original)
                            .resizable()
                            .frame(width: 40, height: 40)
-                           .shadow(color: Color("light"), radius: 5, x: -5, y: -5)
-                           .shadow(color: Color("dark"), radius: 5, x: 5, y: 5)
+                           .shadow(color: Color("light"), radius: 3, x: -5, y: -5)
+                           .shadow(color: Color("dark"), radius: 3, x: 5, y: 5)
                    }.padding(.bottom, 10)
                )
             }

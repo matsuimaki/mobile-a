@@ -11,8 +11,6 @@
 		6C3EAAAE27688A19007D39C4 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EAAAC27688A19007D39C4 /* EditorView.swift */; };
 		6C6CBC51271EBEF400029A97 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CBC50271EBEF400029A97 /* TimelineView.swift */; };
 		6C6CBC52271EBEF400029A97 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CBC50271EBEF400029A97 /* TimelineView.swift */; };
-		6C6CBC54271EDC4E00029A97 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CBC53271EDC4E00029A97 /* CalenderView.swift */; };
-		6C6CBC55271EDC4E00029A97 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CBC53271EDC4E00029A97 /* CalenderView.swift */; };
 		6CE51D1D2771B2FD005C1260 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51D1C2771B2FD005C1260 /* UserData.swift */; };
 		6CE51D1E2771B2FD005C1260 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE51D1C2771B2FD005C1260 /* UserData.swift */; };
 		6CEC7901271EB9220099E125 /* LocationListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC78F1271EB91F0099E125 /* LocationListApp.swift */; };
@@ -30,9 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C2508F727A2C49E00978B82 /* LocationList--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "LocationList--iOS--Info.plist"; sourceTree = "<group>"; };
 		6C3EAAAC27688A19007D39C4 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		6C6CBC50271EBEF400029A97 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
-		6C6CBC53271EDC4E00029A97 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		6CE51D1C2771B2FD005C1260 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		6CEC78F1271EB91F0099E125 /* LocationListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListApp.swift; sourceTree = "<group>"; };
 		6CEC78F2271EB91F0099E125 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +64,7 @@
 		6CEC78EB271EB91E0099E125 = {
 			isa = PBXGroup;
 			children = (
+				6C2508F727A2C49E00978B82 /* LocationList--iOS--Info.plist */,
 				6CEC78F0271EB91F0099E125 /* Shared */,
 				6CEC78FF271EB9220099E125 /* macOS */,
 				6CEC78F9271EB9220099E125 /* Products */,
@@ -76,15 +75,14 @@
 			isa = PBXGroup;
 			children = (
 				6CEC78F1271EB91F0099E125 /* LocationListApp.swift */,
-				6CE51D1C2771B2FD005C1260 /* UserData.swift */,
 				6CEC78F2271EB91F0099E125 /* ContentView.swift */,
 				6C6CBC50271EBEF400029A97 /* TimelineView.swift */,
+				6CFEC5FB271EF960006CA8DB /* HamburgermenuView.swift */,
+				6CF04DCD2771BCDE00B7C355 /* DetailHostView.swift */,
 				6CFEC601271F15DF006CA8DB /* DetailView.swift */,
 				6C3EAAAC27688A19007D39C4 /* EditorView.swift */,
-				6CFEC5FB271EF960006CA8DB /* HamburgermenuView.swift */,
-				6C6CBC53271EDC4E00029A97 /* CalenderView.swift */,
+				6CE51D1C2771B2FD005C1260 /* UserData.swift */,
 				6CEC78F3271EB9220099E125 /* Assets.xcassets */,
-				6CF04DCD2771BCDE00B7C355 /* DetailHostView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -210,7 +208,6 @@
 				6CE51D1D2771B2FD005C1260 /* UserData.swift in Sources */,
 				6C6CBC51271EBEF400029A97 /* TimelineView.swift in Sources */,
 				6C3EAAAD27688A19007D39C4 /* EditorView.swift in Sources */,
-				6C6CBC54271EDC4E00029A97 /* CalenderView.swift in Sources */,
 				6CFEC5FC271EF960006CA8DB /* HamburgermenuView.swift in Sources */,
 				6CEC7901271EB9220099E125 /* LocationListApp.swift in Sources */,
 			);
@@ -226,7 +223,6 @@
 				6CE51D1E2771B2FD005C1260 /* UserData.swift in Sources */,
 				6C6CBC52271EBEF400029A97 /* TimelineView.swift in Sources */,
 				6C3EAAAE27688A19007D39C4 /* EditorView.swift in Sources */,
-				6C6CBC55271EDC4E00029A97 /* CalenderView.swift in Sources */,
 				6CFEC5FD271EF960006CA8DB /* HamburgermenuView.swift in Sources */,
 				6CEC7902271EB9220099E125 /* LocationListApp.swift in Sources */,
 			);
@@ -355,9 +351,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LocationList--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -384,9 +380,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LocationList--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
